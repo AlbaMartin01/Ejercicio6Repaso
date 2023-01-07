@@ -21,9 +21,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        button = findViewById(R.id.button_start)
-        editText = findViewById(R.id.edit_text_name)
-        imageView = findViewById(R.id.image_view_logo)
+        button = findViewById(R.id.button)
+        editText = findViewById(R.id.editText)
+        imageView = findViewById(R.id.image)
 
         button.setOnClickListener {
             if (editText.visibility == View.GONE) {
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-            editText.setOnFocusChangeListener { view, hasFocus ->
+            editText.setOnFocusChangeListener {view, hasFocus ->
                 if (!hasFocus && editText.text.toString().isEmpty()) {
                     editText.setText("Introduce tu nombre")
                 }
@@ -58,14 +58,14 @@ class MainActivity : AppCompatActivity() {
 
             @SuppressLint("ResourceAsColor")
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (s.toString().contains("Wayne", ignoreCase = true)) {
+                if (s.toString().contains("Alba", ignoreCase = true)) {
                     imageView.visibility = View.VISIBLE
                 } else {
                     imageView.visibility = View.GONE
                 }
 
-                if (s.toString().contains("Joker", ignoreCase = true)) {
-                    val color = ContextCompat.getColor(applicationContext, R.color.colorJocker)
+                if (s.toString().contains("Hola", ignoreCase = true)) {
+                    val color = ContextCompat.getColor(applicationContext, R.color.colorX)
                     editText.setTextColor(R.color.white)
                     button.setTextColor(color)
                     window.decorView.setBackgroundColor(color)
